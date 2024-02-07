@@ -12,7 +12,7 @@ class BinarySearchTree {
   constructor() {
     this.root = null;
   }
-
+  
   insert(val, currentNode = this.root) {
 
     let newNode = new TreeNode(val);
@@ -105,12 +105,51 @@ class BinarySearchTree {
 
   // Breadth First Traversal - Iterative
   breadthFirstTraversal() {
+     
+
+      // Put the starting node in a queue
+      const queue = [];
+      queue.push(this.root);
+  
+      // While the queue is not empty
+      while (queue.length > 0) {
+  
+          // Dequeue a node and print it
+          let node = queue.shift();
+          console.log(node.val);
+        if (node.left) {
+          queue.push(node.left);
+        }
+        if (node.right) {
+          queue.push(node.right);
+        }
+          // Put all of the node's children in the back of the queue
+          
+      }
+  
     // Your code here
   }
 
   // Depth First Traversal - Iterative
   depthFirstTraversal() {
-    // Your code here
+    const stack = [];
+
+    stack.push(this.root);
+
+    while(stack.length > 0) {
+      let node = stack.pop();
+
+      console.log(node.val)
+
+      
+      if(node.left) {
+        stack.push(node.left);
+      }
+      if(node.right) {
+        stack.push(node.right)
+      }
+    }
+    
   }
 }
 
