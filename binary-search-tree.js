@@ -51,10 +51,10 @@ class BinarySearchTree {
 
   search(val, currentNode = this.root) {
 
-    if (!this.root) {
+    if (!currentNode) {
       return false;
     }
-    if (val = currentNode.val) {
+    if (val === currentNode.val) {
       return true;
     }
     if (val < currentNode.val) {
